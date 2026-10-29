@@ -5,7 +5,11 @@ A searchable, filterable listing dashboard for entry-level data and tech opening
 **Live demo:** https://vinisha8904.github.io/openings_board/
 ## Screenshots
 
-_Add screenshots here (desktop, mobile, empty state, error state)._
+![Desktop view](desktop.png)
+![Tablet view](tablet.png)
+![Mobile view](mobile.png)
+![Filters in use](filter.png)
+![Empty state](empty.png)
 
 ## Features
 
