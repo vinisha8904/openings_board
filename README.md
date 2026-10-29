@@ -2,8 +2,7 @@
 
 A searchable, filterable listing dashboard for entry-level data and tech openings. Built for **CodeNova Frontend Development Internship, Batch 01, Task 4**.
 
-**Live demo:** _add your GitHub Pages link here_
-
+**Live demo:** https://vinisha8904.github.io/openings_board/
 ## Screenshots
 
 _Add screenshots here (desktop, mobile, empty state, error state)._
