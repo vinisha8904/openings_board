@@ -1,0 +1,285 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --ink: #13233b;
+  --muted: #566479;
+  --bg: #eef2f6;
+  --surface: #ffffff;
+  --line: #d3dbe6;
+  --accent: #0f766e;
+  --accent-dark: #0b5a54;
+  --accent-soft: #e0f0ee;
+  --warn: #b42318;
+  --warn-soft: #fdecea;
+  --radius: 10px;
+  --font-head: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Header and search ---------- */
+.site-header {
+  background: var(--ink);
+  color: #fff;
+  padding-block: 2.5rem 2rem;
+}
+
+h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.intro {
+  margin: 0 0 1.5rem;
+  max-width: 55ch;
+  color: #cdd8e6;
+}
+
+.search input {
+  width: 100%;
+  font: inherit;
+  font-size: 1.125rem;
+  padding: 0.9rem 1.1rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--ink);
+}
+
+.search input:focus-visible {
+  outline: 3px solid #7fd6cd;
+  outline-offset: 2px;
+}
+
+/* ---------- Filters ---------- */
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  align-items: end;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.field { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+
+.field label { font-size: 0.9rem; font-weight: 600; color: var(--muted); }
+
+select {
+  font: inherit;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  min-height: 44px;
+  width: 100%;
+}
+
+.btn,
+.btn-ghost {
+  font: inherit;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+}
+.btn:hover { background: var(--accent-dark); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid var(--accent);
+}
+.btn-ghost:hover { background: var(--accent-soft); }
+
+.result-count {
+  margin: 1.25rem 0 0.75rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ---------- Cards ---------- */
+.card-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.card-domain { margin: 0; font-size: 0.9rem; color: var(--accent-dark); font-weight: 600; }
+
+.card h2 {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.card-company { margin: 0; color: var(--muted); }
+
+.card-summary { margin: 0; flex-grow: 1; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+
+.badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #f5f7fa;
+}
+
+.badge-mode { background: var(--accent-soft); border-color: #b7dbd7; color: var(--accent-dark); }
+
+.skills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.skill {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.65rem;
+  min-height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+}
+.skill:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+.card-footer {
+  margin: 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------- Loading, empty and error states ---------- */
+.state {
+  text-align: center;
+  padding: 3rem 1.25rem;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+
+.state h2 { font-family: var(--font-head); margin: 0 0 0.5rem; font-size: 1.4rem; }
+.state p { margin: 0 auto 1.25rem; max-width: 48ch; color: var(--muted); }
+
+.state-error { background: var(--warn-soft); border: 1px solid #f1b5af; }
+.state-error h2 { color: var(--warn); }
+.state-error .detail { font-size: 0.9rem; color: #7a271f; }
+
+.spinner {
+  width: 32px; height: 32px;
+  margin: 0 auto 1rem;
+  border: 4px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.pagination button {
+  font: inherit;
+  font-weight: 600;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) { border-color: var(--accent); }
+.pagination button:disabled { opacity: 0.45; cursor: not-allowed; }
+.pagination button[aria-current="page"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.site-footer { padding-block: 1rem 2rem; color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 480px) {
+  .site-header { padding-block: 1.75rem 1.5rem; }
+  .controls { grid-template-columns: 1fr 1fr; }
+  #clear { grid-column: 1 / -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation-duration: 2.5s; }
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search and filter entry-level data and tech openings.">
+  <title>Openings Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Openings Board</h1>
+      <p class="intro">Internships, jobs and projects in data and tech. Search by title, company or skill.</p>
+
+      <form class="search" role="search" id="search-form">
+        <label for="search" class="sr-only">Search openings</label>
+        <input id="search" type="search" placeholder="Try &quot;SQL&quot;, &quot;intern&quot; or &quot;Figma&quot;" autocomplete="off">
+      </form>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls" aria-label="Filters and sorting">
+      <div class="field">
+        <label for="filter-domain">Domain</label>
+        <select id="filter-domain"></select>
+      </div>
+      <div class="field">
+        <label for="filter-level">Experience level</label>
+        <select id="filter-level"></select>
+      </div>
+      <div class="field">
+        <label for="filter-mode">Work mode</label>
+        <select id="filter-mode"></select>
+      </div>
+      <div class="field">
+        <label for="sort">Sort by</label>
+        <select id="sort">
+          <option value="newest">Newest first</option>
+          <option value="az">Title A to Z</option>
+          <option value="za">Title Z to A</option>
+        </select>
+      </div>
+      <button type="button" id="clear" class="btn-ghost">Clear all filters</button>
+    </section>
+
+    <p id="result-count" class="result-count" aria-live="polite"></p>
+
+    <section id="results" aria-label="Listings" tabindex="-1">
+      <!-- script.js fills this with cards, or a loading, empty or error message -->
+    </section>
+
+    <nav id="pagination" class="pagination" aria-label="Pagination"></nav>
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>Sample data for a CodeNova Frontend Development internship project. All companies are fictional.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
